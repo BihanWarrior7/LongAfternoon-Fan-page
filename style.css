@@ -1,0 +1,265 @@
+
+:root {
+	--bg: #f3eaf0;
+	--dark: #5b3650;
+	--mauve: #9c6a86;
+	--light: #dcbdd3;
+	--text: #2b1a27;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: var(--bg);
+	color: var(--text);
+	font-family: Georgia, serif;
+	line-height: 1.6;
+}
+
+.topbar {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 20px 5%;
+	background: var(--dark);
+}
+
+.topbar a {
+	color: white;
+	text-decoration: none;
+}
+
+.brand {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+nav a {
+	margin-left: 25px;
+	padding-bottom: 4px;
+}
+
+nav a:hover {
+	color: var(--light);
+}
+
+nav a.current {
+	border-bottom: 2px solid var(--light);
+}
+
+
+main {
+	flex: 1;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 40px 5%;
+}
+
+h1 {
+	font-size: 60px;
+	margin: 0;
+}
+
+h2 {
+	font-size: 36px;
+	margin-top: 0;
+}
+
+
+.hero {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	padding: 40px 0;
+	width: 100%;
+}
+
+blockquote {
+	margin: 20px 0;
+	font-style: italic;
+	color: var(--mauve);
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	background: var(--mauve);
+	color: white;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background: var(--dark);
+}
+
+.record {
+	position: relative;
+	flex-shrink: 0;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	
+	background: 
+		conic-gradient(
+			from 0deg,
+			rgba(255, 255, 255, 0.18) 0deg,
+			transparent 60deg,
+			transparent 180deg,
+			rgba(255, 255, 255, 0.18) 240deg,
+			transparent 300deg
+		),
+		radial-gradient(
+			circle closest-side,
+			#111111 0%,
+			#111111 12%,
+			var(--dark) 12.5%,
+			var(--dark) 38%,
+			#0d0d0d 38.5%,
+			#1a1a1a 40%,
+			#111111 43%,
+			#262626 47%,
+			#111111 50%,
+			#1f1f1f 56%,
+			#0d0d0d 62%,
+			#222222 68%,
+			#111111 75%,
+			#1a1a1a 83%,
+			#0d0d0d 90%,
+			#151515 100%
+		);
+	
+	box-shadow: 
+		0 8px 25px rgba(0, 0, 0, 0.35),
+		inset 0 0 4px rgba(255, 255, 255, 0.2);
+	
+	animation: spin 3s linear infinite;
+}
+
+.record::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: var(--mauve);
+	border: 3px solid var(--light);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.record::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: var(--bg);
+	border: 2px solid #000000;
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.about {
+	display: flex;
+	gap: 40px;
+	width: 100%;
+}
+
+.portrait {
+    flex-shrink: 0;
+    width: 250px;
+    height: 320px;
+    background: url('longafternoon.jpeg') center/cover no-repeat;
+}
+}
+
+.facts {
+	padding: 0;
+	list-style: none;
+}
+
+.facts span {
+	display: inline-block;
+	width: 120px;
+	color: var(--mauve);
+}
+
+.songs {
+	width: 100%;
+}
+
+.songs li {
+	padding: 10px 0;
+	border-bottom: 1px solid var(--light);
+}
+
+.songs li div {
+	display: inline-block;
+}
+
+.songs time {
+	float: right;
+}
+
+.songs small {
+	display: block;
+	color: var(--mauve);
+}
+
+footer {
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	background: var(--dark);
+	color: white;
+	font-size: 14px;
+	margin-top: auto;
+}
+
+@media (max-width: 700px) {
+	.topbar {
+		padding: 15px 20px;
+	}
+
+	nav a {
+		margin: 0 15px 0 0;
+	}
+
+	.hero,
+	.about {
+		display: block;
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+}1
